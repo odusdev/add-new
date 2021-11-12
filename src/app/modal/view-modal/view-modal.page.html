@@ -1,0 +1,112 @@
+<ion-header>
+ <!--  <ion-toolbar>
+    <ion-title>view-modal</ion-title>
+    <ion-button color="primary" (click)="dismiss()" >close</ion-button>
+  </ion-toolbar> -->
+  <ion-segment mode='md' (ionChange)="segmentChanged($event)" [(ngModel)]="valueOfSlide"  color="success">
+    <ion-segment-button mode='md'  value="one" color="success">
+      <ion-label>Step 1</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode='md'  value="two" color="success">
+      <ion-label>Step 2</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content *ngIf="valueOfSlide == 'one'">
+<ion-grid>
+  <ion-row>
+    <ion-col size="10" offset="1"><h1>Heading One</h1></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col size="10" offset="1" class="my-1">
+      <ion-label  >First Name</ion-label>
+      <ion-input ></ion-input>
+    </ion-col>
+    <ion-col size="10" offset="1" class="my-1">
+      <ion-label >Last Name</ion-label>
+      <ion-input></ion-input>
+    </ion-col>
+    <ion-col size="10" offset="1" class="my-1">
+      <ion-label >Email</ion-label>
+      <ion-input></ion-input>
+    </ion-col>
+    <ion-col size="10" offset="1" class="my-1">
+      <ion-label >Promo types</ion-label>
+      <ion-select>
+        <ion-select-option [value]="item" *ngFor="let item of promoType">{{item}}</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="10" offset="1" class="my-1">
+      <ion-checkbox checked="true"></ion-checkbox>
+      <ion-label class="mx-2" >Available with voucher code</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="my-1">
+    <ion-col size="5" offset="1">
+      <ion-button color="white" (click)="dismiss()" class="cancelbtn">Cancel</ion-button>
+    </ion-col>
+    <ion-col size="5" >
+      <ion-button style="float: right;" (click)="continue()">Continue</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-content *ngIf="valueOfSlide == 'two'">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1" ><h1>Heading One</h1></ion-col>
+      <div class="container my-3">
+        <!-- completed -->
+          <div class="step completed">
+            <div class="v-stepper">
+              <div class="circle"></div>
+              <div class="line"></div>
+            </div>
+
+            <div class="content py-2">
+              Step 1
+            </div>
+        </div>
+
+        <!-- active -->
+        <div class="step completed">
+          <div class="v-stepper">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+
+          <div class="content py-2">
+            step 2
+          </div>
+        </div>
+
+
+        <div class="step completed">
+          <div class="v-stepper">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+
+          <div class="content py-2">
+            Step 3
+          </div>
+      </div>
+
+
+      </div>
+
+    </ion-row>
+
+    <ion-row class="mt-5">
+      <ion-col size="5" offset="1">
+        <ion-button color="white" (click)="back()" class="backbtn">Back</ion-button>
+      </ion-col>
+      <ion-col size="5" >
+        <ion-button style="float: right;" >Add</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>

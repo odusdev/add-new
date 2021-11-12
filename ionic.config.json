@@ -1,0 +1,7 @@
+{
+  "name": "ionic-modal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

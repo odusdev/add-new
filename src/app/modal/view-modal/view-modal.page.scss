@@ -1,0 +1,97 @@
+ion-label{
+    font-size: 13px;
+}
+.cancelbtn{
+border: 1px solid black;
+color: black;
+border-radius: 3px;
+}
+.backbtn{
+    color: #3880ff;
+  background-color: white;
+}
+h1{
+    font-weight: 700;
+}
+/* ion-segment{
+    background-color: rgb(62,186,132);
+} */
+
+.container {
+    width: 80%;
+  }
+  
+  .step {
+    
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    background-color: cream;
+  }
+  
+  .v-stepper {
+    position: relative;
+  /*   visibility: visible; */
+  }
+  
+  
+  /* regular step */
+  .step .circle {
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 100%;
+    width: 50px;    /* +6 for border */
+    height: 50px;
+    display: inline-block;
+  }
+  
+  .step .line {
+      top: 48px;
+    left: 23px;
+  /*   height: 120px; */
+    height: 100%;
+      
+      position: absolute;
+      border-left: 3px solid rgb(62,186,132);
+  }
+  
+  .step.completed .circle {
+    visibility: visible;
+    background-color: rgb(62,186,132);
+    border-color: rgb(62,186,132);
+  }
+  
+  .step.completed .line {
+    border-left: 3px solid rgb(62,186,132);
+  }
+  
+  .step.active .circle {
+  visibility: visible;
+    border-color: rgb(62,186,132);
+  }
+  
+  .step.empty .circle {
+      visibility: hidden;
+  }
+  
+  .step.empty .line {
+  /*     visibility: hidden; */
+  /*   height: 150%; */
+    top: 0;
+    height: 150%;
+  }
+  
+  
+  .step:last-child .line {
+    border-left: 3px solid white;
+    z-index: -1; /* behind the circle to completely hide */
+  }
+  
+  .content {
+    margin-left: 20px;
+    display: inline-block;
+  }
+  
