@@ -12,13 +12,14 @@ export class ViewModalPage implements OnInit {
   @Input() userData:any;
   valueOfSlide:any='one'
   signinform:any = FormGroup;
+  emailreg=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   constructor(public modalController: ModalController, public fb:FormBuilder) { }
 
   ngOnInit() {
     this.signinform = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: [''],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email,Validators.pattern(this.emailreg)]],
       promo: ['Free', [Validators.required]],
       voucherCode:  [true]
     });
@@ -40,7 +41,8 @@ export class ViewModalPage implements OnInit {
 
   dismiss() {
     this.modalController.dismiss({
-      'dismissed': true
+      'dismissed': true,
+      'values': this.signinform.value
     });
   }
 
