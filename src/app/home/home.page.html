@@ -13,6 +13,29 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-grid *ngIf="userData">
+    <ion-row>
+      <ion-col>
+        <ion-label>First Name:</ion-label>
+        <ion-text>{{this.userData?.values?.firstName}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-label>Last Name:</ion-label>
+        <ion-text>{{this.userData?.values?.lastName}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-label>Email:</ion-label>
+        <ion-text>{{this.userData?.values?.email}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-label>Promo Type:</ion-label>
+        <ion-text>{{this.userData?.values?.promo}}</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="edit(this.userData?.values)" >Edit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <div id="container">
    <ion-button color="primary" (click)="openModal()" >Open Modal</ion-button>
   </div>
