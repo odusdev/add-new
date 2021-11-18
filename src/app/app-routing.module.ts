@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'view-modal',
     loadChildren: () => import('./modal/view-modal/view-modal.module').then( m => m.ViewModalPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+
 ];
 
 @NgModule({

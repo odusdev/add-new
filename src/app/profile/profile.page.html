@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+<form [formGroup]="profileForm">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label >License No.</ion-label>
+        <p>{{editValues.license}}</p>
+      </ion-col>
+      <ion-col>
+        <ion-label >Random No.</ion-label>
+        <p>{{editValues.random}}</p>
+      </ion-col>
+      <ion-col size="5" >
+        <ion-button type="submit" [disabled]="!profileForm.valid" (click)="edit()" >Edit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
+  <ion-grid *ngIf="editmode">
+    <hr>
+    <h2>Edit</h2>
+    <ion-row>
+      <ion-col>
+        <ion-label >License No.</ion-label>
+        <ion-input formControlName="license"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-label >Random No.</ion-label>
+        <ion-input formControlName="random"></ion-input>
+      </ion-col>
+      <ion-col size="5" >
+        <ion-button type="submit" (click)="cancel()" >cancel</ion-button>
+        <ion-button type="submit" [disabled]="!profileForm.valid" (click)="save()" >save</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
 </ion-content>
