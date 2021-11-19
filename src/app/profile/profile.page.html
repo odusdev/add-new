@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding">
 <form [formGroup]="profileForm">
-  <ion-grid>
+  <ion-grid *ngIf="!editmode">
     <ion-row>
       <ion-col>
         <ion-label >License No.</ion-label>
@@ -23,7 +23,6 @@
   </ion-grid>
 
   <ion-grid *ngIf="editmode">
-    <hr>
     <h2>Edit</h2>
     <ion-row>
       <ion-col>
